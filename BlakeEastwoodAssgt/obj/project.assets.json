@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\YEAR3\\INFT2012\\v7\\StudentGroup-INFT2012 Blake's - General V7\\BlakeEastwoodAssgt\\BlakeEastwoodAssgt.csproj",
+      "projectUniqueName": "C:\\YEAR3\\INFT2012\\v7\\INFT2012-Assignment-1\\BlakeEastwoodAssgt\\BlakeEastwoodAssgt.csproj",
       "projectName": "BlakeEastwoodAssgt",
-      "projectPath": "C:\\YEAR3\\INFT2012\\v7\\StudentGroup-INFT2012 Blake's - General V7\\BlakeEastwoodAssgt\\BlakeEastwoodAssgt.csproj",
+      "projectPath": "C:\\YEAR3\\INFT2012\\v7\\INFT2012-Assignment-1\\BlakeEastwoodAssgt\\BlakeEastwoodAssgt.csproj",
       "packagesPath": "C:\\Users\\Blake\\.nuget\\packages\\",
-      "outputPath": "C:\\YEAR3\\INFT2012\\v7\\StudentGroup-INFT2012 Blake's - General V7\\BlakeEastwoodAssgt\\obj\\",
+      "outputPath": "C:\\YEAR3\\INFT2012\\v7\\INFT2012-Assignment-1\\BlakeEastwoodAssgt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

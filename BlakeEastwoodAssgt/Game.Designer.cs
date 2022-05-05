@@ -88,6 +88,7 @@
             this.StartGameBtn = new System.Windows.Forms.Button();
             this.CurrDieStats = new System.Windows.Forms.TextBox();
             this.BidBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.P1D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1D5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1D3)).BeginInit();
@@ -632,9 +633,17 @@
             this.BidBtn.UseVisualStyleBackColor = true;
             this.BidBtn.Click += new System.EventHandler(this.BidBtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(557, 175);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 201;
+            // 
             // Game
             // 
             this.ClientSize = new System.Drawing.Size(1124, 555);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BidBtn);
             this.Controls.Add(this.CurrDieStats);
             this.Controls.Add(this.StartGameBtn);
@@ -805,5 +814,6 @@
         private Button StartGameBtn;
         private TextBox CurrDieStats;
         private Button BidBtn;
+        private TextBox textBox1;
     }
 }
