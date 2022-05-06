@@ -88,7 +88,12 @@
             this.StartGameBtn = new System.Windows.Forms.Button();
             this.CurrDieStats = new System.Windows.Forms.TextBox();
             this.BidBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PB1 = new System.Windows.Forms.TextBox();
+            this.PB2 = new System.Windows.Forms.TextBox();
+            this.PB3 = new System.Windows.Forms.TextBox();
+            this.PB4 = new System.Windows.Forms.TextBox();
+            this.PB5 = new System.Windows.Forms.TextBox();
+            this.PB6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.P1D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1D5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1D3)).BeginInit();
@@ -528,7 +533,7 @@
             // Play6Lb
             // 
             this.Play6Lb.AutoSize = true;
-            this.Play6Lb.Location = new System.Drawing.Point(961, 213);
+            this.Play6Lb.Location = new System.Drawing.Point(961, 220);
             this.Play6Lb.Name = "Play6Lb";
             this.Play6Lb.Size = new System.Drawing.Size(48, 15);
             this.Play6Lb.TabIndex = 139;
@@ -546,7 +551,7 @@
             // Play5LB
             // 
             this.Play5LB.AutoSize = true;
-            this.Play5LB.Location = new System.Drawing.Point(763, 213);
+            this.Play5LB.Location = new System.Drawing.Point(763, 220);
             this.Play5LB.Name = "Play5LB";
             this.Play5LB.Size = new System.Drawing.Size(48, 15);
             this.Play5LB.TabIndex = 137;
@@ -564,7 +569,7 @@
             // Play4LB
             // 
             this.Play4LB.AutoSize = true;
-            this.Play4LB.Location = new System.Drawing.Point(512, 213);
+            this.Play4LB.Location = new System.Drawing.Point(527, 220);
             this.Play4LB.Name = "Play4LB";
             this.Play4LB.Size = new System.Drawing.Size(147, 15);
             this.Play4LB.TabIndex = 135;
@@ -633,17 +638,58 @@
             this.BidBtn.UseVisualStyleBackColor = true;
             this.BidBtn.Click += new System.EventHandler(this.BidBtn_Click);
             // 
-            // textBox1
+            // PB1
             // 
-            this.textBox1.Location = new System.Drawing.Point(557, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 201;
+            this.PB1.Location = new System.Drawing.Point(551, 175);
+            this.PB1.Name = "PB1";
+            this.PB1.Size = new System.Drawing.Size(108, 23);
+            this.PB1.TabIndex = 201;
+            this.PB1.UseWaitCursor = true;
+            // 
+            // PB2
+            // 
+            this.PB2.Location = new System.Drawing.Point(749, 174);
+            this.PB2.Name = "PB2";
+            this.PB2.Size = new System.Drawing.Size(108, 23);
+            this.PB2.TabIndex = 202;
+            // 
+            // PB3
+            // 
+            this.PB3.Location = new System.Drawing.Point(961, 175);
+            this.PB3.Name = "PB3";
+            this.PB3.Size = new System.Drawing.Size(108, 23);
+            this.PB3.TabIndex = 203;
+            // 
+            // PB4
+            // 
+            this.PB4.Location = new System.Drawing.Point(551, 362);
+            this.PB4.Name = "PB4";
+            this.PB4.Size = new System.Drawing.Size(108, 23);
+            this.PB4.TabIndex = 204;
+            // 
+            // PB5
+            // 
+            this.PB5.Location = new System.Drawing.Point(749, 357);
+            this.PB5.Name = "PB5";
+            this.PB5.Size = new System.Drawing.Size(108, 23);
+            this.PB5.TabIndex = 205;
+            // 
+            // PB6
+            // 
+            this.PB6.Location = new System.Drawing.Point(959, 359);
+            this.PB6.Name = "PB6";
+            this.PB6.Size = new System.Drawing.Size(108, 23);
+            this.PB6.TabIndex = 206;
             // 
             // Game
             // 
             this.ClientSize = new System.Drawing.Size(1124, 555);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PB6);
+            this.Controls.Add(this.PB5);
+            this.Controls.Add(this.PB4);
+            this.Controls.Add(this.PB3);
+            this.Controls.Add(this.PB2);
+            this.Controls.Add(this.PB1);
             this.Controls.Add(this.BidBtn);
             this.Controls.Add(this.CurrDieStats);
             this.Controls.Add(this.StartGameBtn);
@@ -814,6 +860,11 @@
         private Button StartGameBtn;
         private TextBox CurrDieStats;
         private Button BidBtn;
-        private TextBox textBox1;
+        private TextBox PB1;
+        private TextBox PB2;
+        private TextBox PB3;
+        private TextBox PB4;
+        private TextBox PB5;
+        private TextBox PB6;
     }
 }

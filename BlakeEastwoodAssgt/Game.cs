@@ -8,6 +8,9 @@
         PlayerInfo[] TurnOrder;
         int TurnCounter = 0;
         Boolean BidRound = false; //when its false its roll round and when its true its bidding
+
+        //holds the current players value for bidding of die
+
         int NoOfDieBid = 0;
         int dieBid = 0;
         Graphics graDieCurr;
@@ -60,7 +63,12 @@
             {
                 TurnOrder[i] = new PlayerInfo(2, false);     
             }
+            //creates a temporary array to randomly shuffle the order of players
             PlayerInfo[] TempArray = new PlayerInfo[game1.TotalPlayers];
+            //makes sure that player 1 (controlled by the user) is the first person in the turn
+            //TurnOrder[0] = TempArray[0];
+
+
             for (int i = 0; i < game1.TotalPlayers; i++)
             {
                 
@@ -98,6 +106,7 @@
 
         private void EndTurn()
         {
+            LoadCurrentBets();
             if (TurnCounter != game1.TotalPlayers -1)
             {
                 TurnCounter++;
@@ -131,30 +140,44 @@
             {
                     switch (PlayerIn.GetRolls(i))
                     {
-                        case 1: Dicecount[1]++; break;
-                        case 2: Dicecount[2]++; break;
-                        case 3: Dicecount[3]++; break;
-                        case 4: Dicecount[4]++; break;
-                        case 5: Dicecount[5]++; break;
-                        case 6: Dicecount[6]++; break;
+                        case 1: Dicecount[0]++; break;
+                        case 2: Dicecount[1]++; break;
+                        case 3: Dicecount[2]++; break;
+                        case 4: Dicecount[3]++; break;
+                        case 5: Dicecount[4]++; break;
+                        case 6: Dicecount[5]++; break;
                     }
             }
 
             CurrDieStats.Text ="number of: "+"\r\n"
-            + "1's:       " + Dicecount[1] + "\r\n"
-            + "2's:       " + Dicecount[2] + "\r\n"
-            + "3's:       " + Dicecount[3] + "\r\n"
-            + "4's:       " + Dicecount[4] + "\r\n"
-            + "5's:       " + Dicecount[5] + "\r\n"
-            + "6's:       " + Dicecount[6] + "\r\n";
+            + "1's:       " + Dicecount[0] + "\r\n"
+            + "2's:       " + Dicecount[1] + "\r\n"
+            + "3's:       " + Dicecount[2] + "\r\n"
+            + "4's:       " + Dicecount[3] + "\r\n"
+            + "5's:       " + Dicecount[4] + "\r\n"
+            + "6's:       " + Dicecount[5] + "\r\n";
         }
 
         #endregion
         //
         // Loading Dice values into picture box functions
         //
-        #region load dice display
+        #region Display functions
 
+
+        private void LoadCurrentBets()
+        {
+            PB1.Text = Convert.ToString(TurnOrder[0].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[0].GetDieFaceBet()) + "'s";
+            PB2.Text = Convert.ToString(TurnOrder[1].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[1].GetDieFaceBet()) + "'s";
+            if (game1.TotalPlayers > 2)
+            { PB3.Text = Convert.ToString(TurnOrder[2].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[2].GetDieFaceBet()) + "'s"; }
+            if (game1.TotalPlayers > 3)
+            { PB4.Text = Convert.ToString(TurnOrder[3].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[3].GetDieFaceBet()) + "'s"; }
+            if (game1.TotalPlayers > 4)
+            { PB5.Text = Convert.ToString(TurnOrder[4].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[4].GetDieFaceBet()) + "'s"; }
+            if (game1.TotalPlayers > 5)
+            { PB6.Text = Convert.ToString(TurnOrder[5].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[5].GetDieFaceBet()) + "'s"; }
+        }
 
         void LoadCurrentPlayer(int dice, int roll)
         {

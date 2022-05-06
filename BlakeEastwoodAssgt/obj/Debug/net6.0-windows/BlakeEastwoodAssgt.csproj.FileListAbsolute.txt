@@ -147,3 +147,22 @@ C:\YEAR3\INFT2012\v7\StudentGroup-INFT2012 Blake's - General V7\BlakeEastwoodAss
 C:\YEAR3\INFT2012\v7\StudentGroup-INFT2012 Blake's - General V7\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.pdb
 C:\YEAR3\INFT2012\v7\StudentGroup-INFT2012 Blake's - General V7\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.genruntimeconfig.cache
 C:\YEAR3\INFT2012\v7\StudentGroup-INFT2012 Blake's - General V7\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\ref\BlakeEastwoodAssgt.dll
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.exe
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.deps.json
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.runtimeconfig.json
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.dll
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\bin\Debug\net6.0-windows\BlakeEastwoodAssgt.pdb
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.csproj.AssemblyReference.cache
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.Game.resources
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.MainMenu.resources
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.testing.resources
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.csproj.GenerateResource.cache
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.GeneratedMSBuildEditorConfig.editorconfig
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.AssemblyInfoInputs.cache
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.AssemblyInfo.cs
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.csproj.CoreCompileInputs.cache
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.dll
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\refint\BlakeEastwoodAssgt.dll
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.pdb
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\BlakeEastwoodAssgt.genruntimeconfig.cache
+C:\YEAR3\INFT2012\v7\INFT2012-Assignment-1\BlakeEastwoodAssgt\obj\Debug\net6.0-windows\ref\BlakeEastwoodAssgt.dll

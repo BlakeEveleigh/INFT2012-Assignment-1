@@ -21,8 +21,8 @@ namespace BlakeEastwoodAssgt
         // 3: AI player
         int PlayerState;
 
-        int NoOfDiceBet;
-        int DiefaceBet;
+        int NoOfDiceBet = 0;
+        int DiefaceBet = 0;
 
 
         //determines if the player is the current player taking their turn
@@ -53,6 +53,16 @@ namespace BlakeEastwoodAssgt
         {
             return CurrPlayer;
         }
+        public int GetNoOfDiceBet()
+        {
+            return NoOfDiceBet;
+        }
+
+        public int GetDieFaceBet()
+        {
+            return DiefaceBet;
+        }
+
         public void SetNoOfDice(int ValueIn)
         {
             NoOfDiceBet = ValueIn;
