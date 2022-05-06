@@ -66,7 +66,7 @@
             //creates a temporary array to randomly shuffle the order of players
             PlayerInfo[] TempArray = new PlayerInfo[game1.TotalPlayers];
             //makes sure that player 1 (controlled by the user) is the first person in the turn
-            //TurnOrder[0] = TempArray[0];
+            
 
 
             for (int i = 0; i < game1.TotalPlayers; i++)
