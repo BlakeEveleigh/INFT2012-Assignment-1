@@ -85,9 +85,12 @@ namespace BlakeEastwoodAssgt
             return PlayerDiceLeft;
         }
 
-        public void SetCurrentPlayer()
+        public void SetCurrentPlayer(bool currentin)
         {
-            CurrPlayer = true;
+            if (currentin == true) { CurrPlayer = true; }
+            else
+            { CurrPlayer = false; }
+
         }
 
         //a function to be called when a player needs their dice to be rolled

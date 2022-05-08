@@ -65,11 +65,11 @@
             }
             //creates a temporary array to randomly shuffle the order of players
             PlayerInfo[] TempArray = new PlayerInfo[game1.TotalPlayers];
-            //makes sure that player 1 (controlled by the user) is the first person in the turn
-            
 
 
-            for (int i = 0; i < game1.TotalPlayers; i++)
+
+            TempArray[0] = TurnOrder[0];
+            for (int i = 0; i < game1.TotalPlayers -1; i++)
             {
                 
                 int RandInt = Rnd.Next(0, game1.TotalPlayers);
@@ -81,6 +81,7 @@
             }
             
             Array.Copy(TempArray, TurnOrder, game1.TotalPlayers);
+            
 
 
 
@@ -97,7 +98,11 @@
             
             for (int i = 0; i < TurnOrder[TurnCounter].GetPlayerDiceLeft(); i++)
             {
-                LoadCurrentPlayer(i, TurnOrder[TurnCounter].GetRolls(i)) ;
+                if (TurnOrder[TurnCounter].GetCurrentPlayer() == true)
+                {
+                    LoadCurrentPlayer(i, TurnOrder[TurnCounter].GetRolls(i));
+                }
+
             }
             //displays the number of each pip amount of dice
             SortDiceVal(TurnOrder[1]);
@@ -110,12 +115,11 @@
             if (TurnCounter != game1.TotalPlayers -1)
             {
                 TurnCounter++;
-                TurnOrder[TurnCounter].SetCurrentPlayer();
             }    
             else
             {
                 TurnCounter = 0;
-                TurnOrder[TurnCounter].SetCurrentPlayer();
+                
                 /*if (BidRound == false)
                 {
                     //Start bid function
@@ -125,6 +129,7 @@
                    */ 
                // }
             }
+            TurnOrder[TurnCounter].SetCurrentPlayer(true);
             DieNumTxt.Text = "";
             graDieCurr.Clear(Color.White);
             StartTurn();
@@ -167,16 +172,16 @@
 
         private void LoadCurrentBets()
         {
-            PB1.Text = Convert.ToString(TurnOrder[0].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[0].GetDieFaceBet()) + "'s";
-            PB2.Text = Convert.ToString(TurnOrder[1].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[1].GetDieFaceBet()) + "'s";
+            PB1.Text = Convert.ToString(TurnOrder[0].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[0].GetDieFaceBet()) + "'s";
+            PB2.Text = Convert.ToString(TurnOrder[1].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[1].GetDieFaceBet()) + "'s";
             if (game1.TotalPlayers > 2)
-            { PB3.Text = Convert.ToString(TurnOrder[2].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[2].GetDieFaceBet()) + "'s"; }
+            { PB3.Text = Convert.ToString(TurnOrder[2].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[2].GetDieFaceBet()) + "'s"; }
             if (game1.TotalPlayers > 3)
-            { PB4.Text = Convert.ToString(TurnOrder[3].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[3].GetDieFaceBet()) + "'s"; }
+            { PB4.Text = Convert.ToString(TurnOrder[3].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[3].GetDieFaceBet()) + "'s"; }
             if (game1.TotalPlayers > 4)
-            { PB5.Text = Convert.ToString(TurnOrder[4].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[4].GetDieFaceBet()) + "'s"; }
+            { PB5.Text = Convert.ToString(TurnOrder[4].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[4].GetDieFaceBet()) + "'s"; }
             if (game1.TotalPlayers > 5)
-            { PB6.Text = Convert.ToString(TurnOrder[5].GetNoOfDiceBet()) + Convert.ToString(TurnOrder[5].GetDieFaceBet()) + "'s"; }
+            { PB6.Text = Convert.ToString(TurnOrder[5].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[5].GetDieFaceBet()) + "'s"; }
         }
 
         void LoadCurrentPlayer(int dice, int roll)
