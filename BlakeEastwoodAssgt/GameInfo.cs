@@ -8,13 +8,36 @@ namespace BlakeEastwoodAssgt
 {
     public class GameInfo
     {
-        public int playerCount;
-        public int AiCount;
-        public int TotalPlayers;
+        private int playerCount;
+        private int aiCount;
+        private int totalPlayers;
         
         public GameInfo()
         {
 
+        }
+
+        public int PlayerCount
+        {
+            get
+            {
+                return playerCount;
+            }
+            set
+            {
+                playerCount = value;
+            }
+        }
+
+        public int AiCount
+        {
+            get { return aiCount; }
+            set { aiCount = value; }
+        }
+        public int TotalPlayers
+        {
+            get { return totalPlayers; }
+            set { totalPlayers = value; }
         }
 
     }

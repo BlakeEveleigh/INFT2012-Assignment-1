@@ -9,24 +9,24 @@ namespace BlakeEastwoodAssgt
     public class PlayerInfo
     {
 
-        Random Rnd = new Random();
+        private Random Rnd = new Random();
         //number of dice player has left
-        int PlayerDiceLeft;
+        private int PlayerDiceLeft;
         //array that hold the value of each dice
-        int[] PlayerRolls;
+        private int[] PlayerRolls;
 
         //differentiates the player:
         // 0: eliminated player
         // 1: human player
-        // 3: AI player
-        int PlayerState;
+        // 2: AI player
+        private int PlayerState;
 
-        int NoOfDiceBet = 0;
-        int DiefaceBet = 0;
+        private int NoOfDiceBet = 0;
+        private int DiefaceBet = 0;
 
 
         //determines if the player is the current player taking their turn
-        bool CurrPlayer;
+        private bool CurrPlayer;
 
 
         //contructor for the PlayerInfo class

@@ -13,7 +13,7 @@ namespace BlakeEastwoodAssgt
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            game1.playerCount = Convert.ToInt32(PlayerBox.Text);
+            game1.PlayerCount = Convert.ToInt32(PlayerBox.Text);
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -23,18 +23,18 @@ namespace BlakeEastwoodAssgt
 
         private void PlayBtn_Click(object sender, EventArgs e)
         {
-            if (game1.playerCount + game1.AiCount > 6)
+            if (game1.PlayerCount + game1.AiCount > 6)
             {
                 System.Windows.Forms.MessageBox.Show("Too many players have been selected. make sure there is less than 6 chosen both in ai and players");
             }
-            else if (game1.playerCount + game1.AiCount <= 1)
+            else if (game1.PlayerCount + game1.AiCount <= 1)
             {
                 MessageBox.Show("Not enough players have been selected. Please select at least two players");
             }
 
             else
             {
-                game1.TotalPlayers = game1.playerCount + game1.AiCount;
+                game1.TotalPlayers = game1.PlayerCount + game1.AiCount;
                 Game frmGame = new Game(game1);
                 frmGame.ShowDialog();
             }
@@ -48,7 +48,7 @@ namespace BlakeEastwoodAssgt
 
         private void AIBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            game1.AiCount = Convert.ToInt32(AIBox.Text);
+            game1.AiCount = Convert.ToInt32(AIBox.SelectedItem);
         }
     }
 }

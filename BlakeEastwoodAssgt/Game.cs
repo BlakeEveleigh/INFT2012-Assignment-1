@@ -7,12 +7,12 @@
         MainMenu main = new MainMenu();
         PlayerInfo[] TurnOrder;
         int TurnCounter = 0;
-        Boolean BidRound = false; //when its false its roll round and when its true its bidding
+        
 
         //holds the current players value for bidding of die
 
-        int NoOfDieBid = 0;
-        int dieBid = 0;
+        int NoOfDieBid = 1;
+        int dieBid = 1;
         Graphics graDieCurr;
 
         GameInfo game1;
@@ -68,8 +68,8 @@
 
 
 
-            TempArray[0] = TurnOrder[0];
-            for (int i = 0; i < game1.TotalPlayers -1; i++)
+            
+            for (int i = 0; i < game1.TotalPlayers ; i++)
             {
                 
                 int RandInt = Rnd.Next(0, game1.TotalPlayers);
@@ -81,8 +81,9 @@
             }
             
             Array.Copy(TempArray, TurnOrder, game1.TotalPlayers);
-            
 
+            PTurnLB.Text = "Player: " + (GetCurPlayer()+1)  +"'s turn.";
+            TurnCounter = GetCurPlayer();
 
 
 
@@ -105,38 +106,58 @@
 
             }
             //displays the number of each pip amount of dice
-            SortDiceVal(TurnOrder[1]);
+            SortDiceVal(TurnOrder[TurnCounter]);
             
         }
 
         private void EndTurn()
         {
-            LoadCurrentBets();
+            if (TurnCounter == 0)
+            {
+                TurnOrder[game1.TotalPlayers - 1].SetCurrentPlayer(false);
+            }
+            else
+            {
+                TurnOrder[TurnCounter - 1].SetCurrentPlayer(false);
+            }
+            int iCount = TurnCounter - 1;
+            
+            
             if (TurnCounter != game1.TotalPlayers -1)
             {
                 TurnCounter++;
             }    
             else
             {
-                TurnCounter = 0;
-                
-                /*if (BidRound == false)
-                {
-                    //Start bid function
-                }
-                else
-                {
-                   */ 
-               // }
+                TurnCounter = 0;                
             }
             TurnOrder[TurnCounter].SetCurrentPlayer(true);
+            
+            
+            MessageBox.Show("Player " + (TurnCounter+1) + "'s Turn");
             DieNumTxt.Text = "";
             graDieCurr.Clear(Color.White);
+            PTurnLB.Text = "Player: " + (TurnCounter +1) + "'s turn.";
             StartTurn();
 
         }
-        
 
+        private void EndRound()
+        {
+            DisplayAll();
+
+        }
+
+        private void DisplayAll()
+        {
+            for (int i = 0; i < game1.TotalPlayers; i++)
+            {
+                for (int j = 0; j < TurnOrder[i].GetPlayerDiceLeft(); j++)
+                {
+                    LoadPlayer(i, j, TurnOrder[i].GetRolls(j));
+                }
+            }
+        }
 
         private void SortDiceVal(PlayerInfo PlayerIn)
         {
@@ -155,12 +176,12 @@
             }
 
             CurrDieStats.Text ="number of: "+"\r\n"
-            + "1's:       " + Dicecount[0] + "\r\n"
-            + "2's:       " + Dicecount[1] + "\r\n"
-            + "3's:       " + Dicecount[2] + "\r\n"
-            + "4's:       " + Dicecount[3] + "\r\n"
-            + "5's:       " + Dicecount[4] + "\r\n"
-            + "6's:       " + Dicecount[5] + "\r\n";
+            + "1's:      " + Dicecount[0] + "\r\n"
+            + "2's:      " + Dicecount[1] + " (+ " + Dicecount[0] + ")" + "\r\n"
+            + "3's:      " + Dicecount[2] + " (+ " + Dicecount[0] + ")" + "\r\n"
+            + "4's:      " + Dicecount[3] + " (+ " + Dicecount[0] + ")" + "\r\n"
+            + "5's:      " + Dicecount[4] + " (+ " + Dicecount[0] + ")" + "\r\n"
+            + "6's:      " + Dicecount[5] + " (+ " + Dicecount[0] + ")" + "\r\n";
         }
 
         #endregion
@@ -184,7 +205,7 @@
             { PB6.Text = Convert.ToString(TurnOrder[5].GetNoOfDiceBet()) + " " + Convert.ToString(TurnOrder[5].GetDieFaceBet()) + "'s"; }
         }
 
-        void LoadCurrentPlayer(int dice, int roll)
+       private void LoadCurrentPlayer(int dice, int roll)
         {
 
             switch (dice)
@@ -215,9 +236,22 @@
 
         }
 
+         private void ClearCurrentPlayer()
+        {
+            Graphics Cd1 = CD1.CreateGraphics();
+            Cd1.Clear(Color.White);
+            Graphics Cd2 = CD2.CreateGraphics();
+            Cd2.Clear(Color.White);
+            Graphics Cd3 = CD3.CreateGraphics();
+            Cd3.Clear(Color.White);
+            Graphics Cd4 = CD4.CreateGraphics();
+            Cd4.Clear(Color.White);
+            Graphics Cd5 = CD5.CreateGraphics();
+            Cd5.Clear(Color.White);
+        }
 
 
-        void LoadPlayer(int PlayerNum ,int dice, int roll)
+        private void LoadPlayer(int PlayerNum ,int dice, int roll)
         {
             switch (PlayerNum)
             {
@@ -404,62 +438,9 @@
             }
         }
 
-
-
-
-
-
-
-
-
       
         // this function is going to take the number of dice the player has left and roll the by calling create dice
-        private void DisplayDie( int iCount, int roll)
-        {
-            
-           
-            
-            
-            switch (iCount)
-            {
-                case 0:
-                    //dice 1
-                        Graphics graDie1 = CD1.CreateGraphics();
-                        //creates the graphic for the picture box then passes into the create dice function
-                        CreateDice(graDie1, roll);
-                        
-                        break;
-                case 1:
-
-                    //Dice 2
-                        
-                        Graphics graDie2 = CD2.CreateGraphics();
-                        CreateDice(graDie2, roll);
-                        
-                        break;
-                case 2:
-                    //Dice 3
-                        
-                        Graphics graDie3 = CD3.CreateGraphics();
-                        CreateDice(graDie3, roll);
-                        
-                        break;
-                case 3: 
-                    //Dice 4
-                       
-                        Graphics graDie4 = CD4.CreateGraphics();
-                        CreateDice(graDie4, roll);
-                       
-                        break;
-
-                //Dice 5
-                case 4:
-                        Graphics graDie5 = CD5.CreateGraphics();
-                        CreateDice(graDie5, roll);
-                        break;
-                        
-                }
-            }
+       
         
 
 
@@ -519,6 +500,9 @@
                     graDie.FillEllipse(Brushes.Black, 12, 25, 5, 5);
                     graDie.FillEllipse(Brushes.Black, 36, 25, 5, 5);
                     break;
+                case 10:
+                    graDie.Clear(Color.White);
+                    break;
             }             
           }
         #endregion
@@ -531,62 +515,70 @@
 
         private void StartBtn_click(object sender, EventArgs e)
         {
-            Startgame(game1.playerCount, game1.AiCount);
+            Startgame(game1.PlayerCount, game1.AiCount);
         }
 
         private void DieNumPlus_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (NoOfDieBid < 30)
                 {
                     NoOfDieBid++;
                 }
-                TurnOrder[GetCurPlayer()].SetNoOfDice(NoOfDieBid);
+                TurnOrder[TurnCounter].SetNoOfDice(NoOfDieBid);
                 DieNumTxt.Text = Convert.ToString(NoOfDieBid);
             }
             catch (Exception)
             {
                 MessageBox.Show("You must start the game first");
             }
+            
         }
 
         private void DieNumMinus_Click(object sender, EventArgs e)
-        {
+         {
+            
             try
             {
                 if (NoOfDieBid >= 2)
                 {
                     NoOfDieBid--;
-                }
-                TurnOrder[GetCurPlayer()].SetNoOfDice(NoOfDieBid);
-                DieNumTxt.Text = Convert.ToString(NoOfDieBid);
+                    TurnOrder[TurnCounter].SetNoOfDice(NoOfDieBid);
+                    DieNumTxt.Text = Convert.ToString(NoOfDieBid);
+                }  
             }
             catch (Exception)
             {
                 MessageBox.Show("you must start the game first");
             }
+            
         }
 
         private void DieFacePlus_Click(object sender, EventArgs e)
         {
+
             if (dieBid <= 5)
             {
                 dieBid++;
                 CreateDice(graDieCurr, dieBid);
             }
-            TurnOrder[GetCurPlayer()].SetDieFaceBet(dieBid);
+            TurnOrder[TurnCounter].SetDieFaceBet(dieBid);
+            
 
         }
 
         private void DieFaceMinus_Click(object sender, EventArgs e)
         {
-            if (dieBid >= 2)
+            
+            if (dieBid >= 3)
             {
                 dieBid--;
                 CreateDice(graDieCurr, dieBid);
             }
-            TurnOrder[GetCurPlayer()].SetDieFaceBet(dieBid);
+            TurnOrder[TurnCounter].SetDieFaceBet(dieBid);
+            
 
 
         }
@@ -595,9 +587,53 @@
         
         private void BidBtn_Click(object sender, EventArgs e)
         {
-            EndTurn();
+            try
+            {
+                if (TurnOrder[TurnCounter].GetNoOfDiceBet() > TurnOrder[TurnCounter - 1].GetNoOfDiceBet() || TurnOrder[TurnCounter].GetDieFaceBet() > TurnOrder[TurnCounter - 1].GetDieFaceBet())
+                {
+                    LoadCurrentBets();
+                    NoOfDieBid = 2;
+                    dieBid = 2;
+                    DieNumTxt.Text = "";
+                    graDieCurr.Clear(Color.White);
+                    CurrDieStats.Clear();
+                    ClearCurrentPlayer();
+                    EndTurn();
+                }
+                else
+                {
+                    MessageBox.Show("please place a bet higher than the previous");
+                }
+            }
+
+            catch (Exception)
+            {
+                if (TurnOrder[TurnCounter].GetNoOfDiceBet() > TurnOrder[5].GetNoOfDiceBet() || TurnOrder[TurnCounter].GetDieFaceBet() > TurnOrder[5].GetDieFaceBet())
+                {
+                    LoadCurrentBets();
+                    NoOfDieBid = 2;
+                    dieBid = 2;
+                    DieNumTxt.Text = "";
+                    graDieCurr.Clear(Color.White);
+                    CurrDieStats.Clear();
+                    ClearCurrentPlayer();
+                    EndTurn();
+                }
+                else
+                {
+                    MessageBox.Show("please place a bet higher than the previous");
+                }
+            }
+        }
+
+        private void LiarBtn_Click(object sender, EventArgs e)
+        {
+            EndRound();
         }
         #endregion
+
+
+
 
     }
 

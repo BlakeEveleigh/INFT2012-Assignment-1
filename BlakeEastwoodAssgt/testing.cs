@@ -88,7 +88,7 @@ namespace BlakeEastwoodAssgt
         private void button1_Click(object sender, EventArgs e)
         {
             //StartRound(6);
-            PlayerGen(game1.playerCount, game1.AiCount);
+            PlayerGen(game1.PlayerCount, game1.AiCount);
         }
 
         private void testing_Load(object sender, EventArgs e)

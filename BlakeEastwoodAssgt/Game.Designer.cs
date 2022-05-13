@@ -438,6 +438,7 @@
             this.LiarBtn.TabIndex = 150;
             this.LiarBtn.Text = "Liar!";
             this.LiarBtn.UseVisualStyleBackColor = true;
+            this.LiarBtn.Click += new System.EventHandler(this.LiarBtn_Click);
             // 
             // OutcomeLB
             // 
@@ -614,7 +615,7 @@
             // 
             this.StartGameBtn.Location = new System.Drawing.Point(12, 12);
             this.StartGameBtn.Name = "StartGameBtn";
-            this.StartGameBtn.Size = new System.Drawing.Size(84, 50);
+            this.StartGameBtn.Size = new System.Drawing.Size(113, 76);
             this.StartGameBtn.TabIndex = 198;
             this.StartGameBtn.Text = "Start Game";
             this.StartGameBtn.UseVisualStyleBackColor = true;
