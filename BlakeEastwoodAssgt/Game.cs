@@ -1,5 +1,6 @@
 ﻿namespace BlakeEastwoodAssgt
 {
+
     //see if this edit is here
     public partial class Game : Form
     {
@@ -16,7 +17,7 @@
         Graphics graDieCurr;
 
         GameInfo game1;
-        
+        int test;
         public Game(GameInfo gamein)
         {
             InitializeComponent();
